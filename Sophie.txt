@@ -1,0 +1,5 @@
+Name: Sophie
+Gender: Female
+Race: Midlander
+Role: Healer
+Class: White Mage
