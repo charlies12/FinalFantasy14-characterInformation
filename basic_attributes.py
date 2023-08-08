@@ -4,12 +4,10 @@
 
 # Avatar class is supposed to create a character which we will fill up with information
 class Avatar:
-    def __init__(self, name, gender, race, role, character_class, character_level):
+    def __init__(self, name, gender, race, character_level):
         self.name = name
         self.gender = gender
         self.race = race
-        self.role = role
-        self.character_class = character_class
         self.character_level = character_level
 
     def get_name(self):
@@ -19,8 +17,6 @@ class Avatar:
         return (f"Name: {self.name}\n"
                 f"Gender: {self.gender}\n"
                 f"Race: {self.race}\n"
-                f"Role: {self.role}\n"
-                f"Class: {self.character_class}\n"
                 f"Level: {self.character_level}\n")
         # info_dictionary = {"Name": self.name,
         #                    "Gender": self.gender,
@@ -80,8 +76,8 @@ class PhysicalWeapon(Weapon):
                 f"Physical Damage: {self.physical_damage}\n")
 
 
-sophie = Avatar("Sophie", "Female", "Midlander", "Healer", "White Mage", 90)
-knee_height = Avatar("Mountain", "Male", "Lalafell", "Tank", "Dark Knight", 90)
+sophie = Avatar("Sophie", "Female", "Midlander", 90)
+knee_height = Avatar("Mountain", "Male", "Lalafell", 90)
 
 dark_knight_weapon = PhysicalWeapon("Shadowbringer", "Dark Knight", 530, 90)
 white_mage_weapon = MagicalWeapon("Staff", "White Mage", 1, 20)
@@ -93,7 +89,77 @@ def add_to_page(character_info, weapon_info):
         my_character_info.write(weapon_info)
 
 
-add_to_page(sophie.get_basic_info(), white_mage_weapon.get_magic_weapon_info())
+def select_character_role():
+    # character_role = []
+    not_selected_character = True
+    while not_selected_character:
+        user_selects = input("Select a role: Type (t) for Tank, (h) for Healer or (d) for Dps").lower()
+
+        if user_selects == "t":
+            not_selected_character = False
+            # character_role.append(user_selects)
+            return "Tank"
+        elif user_selects == "h":
+            # character_role.append(user_selects)
+            not_selected_character = False
+            return "Healer"
+        elif user_selects == "d":
+            # character_role.append(user_selects)
+            not_selected_character = False
+            return "Dps"
+        elif user_selects == "q":
+            return "Exiting selection"
+        else:
+            print("Invalid input. Try again.")
+
+
+def select_character_tank_class():
+    tank_classes = ["Paladin", "Warrior", "Dark Knight", "Gunbreaker"]
+
+    not_selected_class = True
+    while not_selected_class:
+        user_selected_tank_class = input("Type the exact tank class (Ignore capitalization): ").title()
+        if user_selected_tank_class in tank_classes:
+            not_selected_class = False
+            return user_selected_tank_class
+        else:
+            print("Class not found. Try again.")
+
+
+def select_character_healer_class():
+    healer_classes = ["White Mage", "Scholar", "Astrologian", "Sage"]
+
+    not_selected_class = True
+    while not_selected_class:
+        user_selected_healer_class = input("Type the exact healer class (Ignore capitalization): ").title()
+        if user_selected_healer_class in healer_classes:
+            not_selected_class = False
+            return user_selected_healer_class
+        else:
+            print("Class not found. Try again.")
+
+
+def select_character_dps_class():
+    dps_classes = ["Dragoon", "Monk", "Ninja", "Samurai", "Reaper", "Bard", "Machinist" "Dancer", "Black Mage",
+                   "Summoner", "Red Mage", "Blue Mage"]
+
+    not_selected_class = True
+    while not_selected_class:
+        user_selected_dps_class = input("Type the exact dps class (Ignore capitalization): ").title()
+        if user_selected_dps_class in dps_classes:
+            not_selected_class = False
+            return user_selected_dps_class
+        else:
+            print("Class not found. Try again.")
+
+
+
+
+# print(select_character_role())
+# print(select_character_tank_class())
+# print(select_character_healer_class())
+print(select_character_dps_class())
+# add_to_page(sophie.get_basic_info(), white_mage_weapon.get_magic_weapon_info())
 # print(sophie.get_basic_info())
 # print(white_mage_weapon)
 # print(knee_height)
