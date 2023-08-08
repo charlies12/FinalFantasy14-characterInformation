@@ -3,3 +3,8 @@ Gender: Female
 Race: Midlander
 Role: Healer
 Class: White Mage
+Level: 90
+Weapon: Staff
+Equip class: White Mage
+Item level: 1
+Magic damage: 20

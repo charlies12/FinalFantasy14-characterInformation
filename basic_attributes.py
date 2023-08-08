@@ -4,12 +4,13 @@
 
 # Avatar class is supposed to create a character which we will fill up with information
 class Avatar:
-    def __init__(self, name, gender, race, role, character_class):
+    def __init__(self, name, gender, race, role, character_class, character_level):
         self.name = name
         self.gender = gender
         self.race = race
         self.role = role
         self.character_class = character_class
+        self.character_level = character_level
 
     def get_name(self):
         return self.name
@@ -19,7 +20,8 @@ class Avatar:
                 f"Gender: {self.gender}\n"
                 f"Race: {self.race}\n"
                 f"Role: {self.role}\n"
-                f"Class: {self.character_class}\n")
+                f"Class: {self.character_class}\n"
+                f"Level: {self.character_level}\n")
         # info_dictionary = {"Name": self.name,
         #                    "Gender": self.gender,
         #                    "Race": self.race,
@@ -52,11 +54,17 @@ class MagicalWeapon(Weapon):
         super().__init__(weapon_name, weapon_class, weapon_item_level)
         self.magical_damage = magical_damage
 
-    def __str__(self):
-        return (f"Weapon name: {self.weapon_name}\n"
-                f"Weapon class: {self.weapon_class}\n"
+    def get_magic_weapon_info(self):
+        return (f"Weapon: {self.weapon_name}\n"
+                f"Equip class: {self.weapon_class}\n"
                 f"Item level: {self.weapon_item_level}\n"
-                f"Magic Damage: {self.magical_damage}\n")
+                f"Magic damage: {self.magical_damage}\n")
+
+    # def __str__(self):
+    #     return (f"Weapon name: {self.weapon_name}\n"
+    #             f"Weapon class: {self.weapon_class}\n"
+    #             f"Item level: {self.weapon_item_level}\n"
+    #             f"Magic Damage: {self.magical_damage}\n")
 
 
 # PhysicalWeapon is like MagicalWeapon that only the type of damage differs and will be labeled as physical damage
@@ -66,25 +74,26 @@ class PhysicalWeapon(Weapon):
         self.physical_damage = physical_damage
 
     def __str__(self):
-        return (f"Weapon name: {self.weapon_name}\n"
-                f"Weapon class: {self.weapon_class}\n"
+        return (f"Weapon: {self.weapon_name}\n"
+                f"Equip class: {self.weapon_class}\n"
                 f"Item level: {self.weapon_item_level}\n"
                 f"Physical Damage: {self.physical_damage}\n")
 
 
-sophie = Avatar("Sophie than", "Female", "Midlander", "Healer", "White Mage")
-knee_height = Avatar("Mountain", "Male", "Lalafell", "Tank", "Dark Knight")
+sophie = Avatar("Sophie", "Female", "Midlander", "Healer", "White Mage", 90)
+knee_height = Avatar("Mountain", "Male", "Lalafell", "Tank", "Dark Knight", 90)
 
 dark_knight_weapon = PhysicalWeapon("Shadowbringer", "Dark Knight", 530, 90)
 white_mage_weapon = MagicalWeapon("Staff", "White Mage", 1, 20)
 
 
-def add_to_page(info):
+def add_to_page(character_info, weapon_info):
     with open(f"{sophie.get_name()}.txt", "a+") as my_character_info:
-        my_character_info.write(info)
+        my_character_info.write(character_info)
+        my_character_info.write(weapon_info)
 
 
-add_to_page(sophie.get_basic_info())
+add_to_page(sophie.get_basic_info(), white_mage_weapon.get_magic_weapon_info())
 # print(sophie.get_basic_info())
 # print(white_mage_weapon)
 # print(knee_height)
