@@ -4,11 +4,10 @@
 
 # Avatar class is supposed to create a character which we will fill up with information
 class Avatar:
-    def __init__(self, name, gender, race, character_level):
+    def __init__(self, name, gender, race):
         self.name = name
         self.gender = gender
         self.race = race
-        self.character_level = character_level
 
     def get_name(self):
         return self.name
@@ -16,8 +15,7 @@ class Avatar:
     def get_basic_info(self):
         return (f"Name: {self.name}\n"
                 f"Gender: {self.gender}\n"
-                f"Race: {self.race}\n"
-                f"Level: {self.character_level}\n")
+                f"Race: {self.race}\n")
         # info_dictionary = {"Name": self.name,
         #                    "Gender": self.gender,
         #                    "Race": self.race,
@@ -76,24 +74,26 @@ class PhysicalWeapon(Weapon):
                 f"Physical Damage: {self.physical_damage}\n")
 
 
-sophie = Avatar("Sophie", "Female", "Midlander", 90)
-knee_height = Avatar("Mountain", "Male", "Lalafell", 90)
+sophie = Avatar("Sophie", "Female", "Midlander")
+knee_height = Avatar("Mountain", "Male", "Lalafell")
 
 dark_knight_weapon = PhysicalWeapon("Shadowbringer", "Dark Knight", 530, 90)
 white_mage_weapon = MagicalWeapon("Staff", "White Mage", 1, 20)
 
 
+# add_to_page writes to a file with the character name as file title.
 def add_to_page(character_info, weapon_info):
     with open(f"{sophie.get_name()}.txt", "a+") as my_character_info:
         my_character_info.write(character_info)
-        my_character_info.write(weapon_info)
+        # my_character_info.write(weapon_info)
 
 
+# Asks what role to pick. Tank, Healer or DPS
 def select_character_role():
     # character_role = []
     not_selected_character = True
     while not_selected_character:
-        user_selects = input("Select a role: Type (t) for Tank, (h) for Healer or (d) for Dps").lower()
+        user_selects = input("Select a role: Type (t) for Tank, (h) for Healer or (d) for Dps and (q) to quit.").lower()
 
         if user_selects == "t":
             not_selected_character = False
@@ -113,6 +113,7 @@ def select_character_role():
             print("Invalid input. Try again.")
 
 
+# select_character_tank_class has a list of all tank classes. Returns a class if user input matches name on  tank list.
 def select_character_tank_class():
     tank_classes = ["Paladin", "Warrior", "Dark Knight", "Gunbreaker"]
 
@@ -126,6 +127,7 @@ def select_character_tank_class():
             print("Class not found. Try again.")
 
 
+# select_character_healer_class has a list of playable healer classes. Returns class if user input matches name on list.
 def select_character_healer_class():
     healer_classes = ["White Mage", "Scholar", "Astrologian", "Sage"]
 
@@ -139,6 +141,7 @@ def select_character_healer_class():
             print("Class not found. Try again.")
 
 
+# select_character_dps_class has a list of playable dps class. Returns class if user input matches name on list.
 def select_character_dps_class():
     dps_classes = ["Dragoon", "Monk", "Ninja", "Samurai", "Reaper", "Bard", "Machinist" "Dancer", "Black Mage",
                    "Summoner", "Red Mage", "Blue Mage"]
@@ -158,9 +161,32 @@ def select_character_dps_class():
 # print(select_character_role())
 # print(select_character_tank_class())
 # print(select_character_healer_class())
-print(select_character_dps_class())
+# print(select_character_dps_class())
 # add_to_page(sophie.get_basic_info(), white_mage_weapon.get_magic_weapon_info())
-# print(sophie.get_basic_info())
+print(sophie.get_basic_info())
+
 # print(white_mage_weapon)
 # print(knee_height)
 # print(dark_knight_weapon)
+
+
+# returns a list of jobs unlocked by character
+def form_a_list_of_jobs():
+    my_jobs = []
+    continue_asking = True
+    while continue_asking:
+        match select_character_role():
+            case "Tank":
+                my_jobs.append(select_character_tank_class())
+
+            case "Healer":
+                my_jobs.append(select_character_healer_class())
+
+            case "Dps":
+                my_jobs.append(select_character_dps_class())
+            case _:
+                print("(q)uit")
+                continue_asking = False
+    return my_jobs
+
+print(form_a_list_of_jobs())
