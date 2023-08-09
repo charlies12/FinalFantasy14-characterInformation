@@ -1,0 +1,80 @@
+Name: Sophie
+Gender: Female
+Race: Midlander
+Dark Knight
+White Mage
+Reaper
+Red Mage
+Astrologian
+Scholar
+Summoner
+Bard
+Gunbreaker
+Name: Sophie
+Gender: Female
+Race: Midlander
+Name: Sophie
+Gender: Female
+Race: Midlander
+Name: Sophie
+Gender: Female
+Race: Midlander
+Paladin
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Paladin', [])
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Dark Knight', [])
+Name: Sophie
+Gender: Female
+Race: Midlander
+Dark Knight
+Name: Sophie
+Gender: Female
+Race: Midlander
+Paladin
+Name: Sophie
+Gender: Female
+Race: Midlander
+Name: Sophie
+Gender: Female
+Race: Midlander
+Name: Sophie
+Gender: Female
+Race: Midlander
+Paladin
+Name: Sophie
+Gender: Female
+Race: Midlander
+Paladin
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Paladin',)
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Paladin',)
+Name: Sophie
+Gender: Female
+Race: Midlander
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Paladin',)
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Paladin', [90])
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Paladin', [90])
+('Warrior', [89])
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Paladin', [])

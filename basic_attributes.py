@@ -81,11 +81,7 @@ dark_knight_weapon = PhysicalWeapon("Shadowbringer", "Dark Knight", 530, 90)
 white_mage_weapon = MagicalWeapon("Staff", "White Mage", 1, 20)
 
 
-# add_to_page writes to a file with the character name as file title.
-def add_to_page(character_info, weapon_info):
-    with open(f"{sophie.get_name()}.txt", "a+") as my_character_info:
-        my_character_info.write(character_info)
-        # my_character_info.write(weapon_info)
+
 
 
 # Asks what role to pick. Tank, Healer or DPS
@@ -116,15 +112,29 @@ def select_character_role():
 # select_character_tank_class has a list of all tank classes. Returns a class if user input matches name on  tank list.
 def select_character_tank_class():
     tank_classes = ["Paladin", "Warrior", "Dark Knight", "Gunbreaker"]
+    tank_level = []
+    minimum_level = 1
+    maximum_level = 90
 
     not_selected_class = True
+    not_selected_tank_level = True
+    minimum_level = 1
+    maximum_level = 90
     while not_selected_class:
         user_selected_tank_class = input("Type the exact tank class (Ignore capitalization): ").title()
         if user_selected_tank_class in tank_classes:
+            try:
+                user_selected_tank_level = int(input(f"Enter {user_selected_tank_class} level: "))
+                if user_selected_tank_level < minimum_level or user_selected_tank_level > maximum_level:
+                    print("Invalid level range. Levels range from 1 to 90.")
+                tank_level.append(user_selected_tank_level)
+            except ValueError:
+                print("Enter valid numbers.")
             not_selected_class = False
-            return user_selected_tank_class
+            return user_selected_tank_class, tank_level
         else:
             print("Class not found. Try again.")
+
 
 
 # select_character_healer_class has a list of playable healer classes. Returns class if user input matches name on list.
@@ -143,7 +153,7 @@ def select_character_healer_class():
 
 # select_character_dps_class has a list of playable dps class. Returns class if user input matches name on list.
 def select_character_dps_class():
-    dps_classes = ["Dragoon", "Monk", "Ninja", "Samurai", "Reaper", "Bard", "Machinist" "Dancer", "Black Mage",
+    dps_classes = ["Dragoon", "Monk", "Ninja", "Samurai", "Reaper", "Bard", "Machinist", "Dancer", "Black Mage",
                    "Summoner", "Red Mage", "Blue Mage"]
 
     not_selected_class = True
@@ -189,4 +199,16 @@ def form_a_list_of_jobs():
                 continue_asking = False
     return my_jobs
 
-print(form_a_list_of_jobs())
+
+# add_to_page writes to a file with the character name as file title.
+def add_to_page(character_info):
+    with open(f"{sophie.get_name()}.txt", "a+") as my_character_info:
+        my_character_info.write(character_info)
+        for job in form_a_list_of_jobs():
+            my_character_info.write(f"{job}\n")
+
+        # my_character_info.write(weapon_info)
+# print(form_a_list_of_jobs())
+
+
+add_to_page(sophie.get_basic_info())
