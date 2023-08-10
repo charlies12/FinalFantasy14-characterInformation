@@ -81,9 +81,6 @@ dark_knight_weapon = PhysicalWeapon("Shadowbringer", "Dark Knight", 530, 90)
 white_mage_weapon = MagicalWeapon("Staff", "White Mage", 1, 20)
 
 
-
-
-
 # Asks what role to pick. Tank, Healer or DPS
 def select_character_role():
     # character_role = []
@@ -113,59 +110,107 @@ def select_character_role():
 def select_character_tank_class():
     tank_classes = ["Paladin", "Warrior", "Dark Knight", "Gunbreaker"]
     tank_level = []
-    minimum_level = 1
-    maximum_level = 90
 
     not_selected_class = True
     not_selected_tank_level = True
     minimum_level = 1
     maximum_level = 90
-    while not_selected_class:
-        user_selected_tank_class = input("Type the exact tank class (Ignore capitalization): ").title()
-        if user_selected_tank_class in tank_classes:
-            try:
-                user_selected_tank_level = int(input(f"Enter {user_selected_tank_class} level: "))
-                if user_selected_tank_level < minimum_level or user_selected_tank_level > maximum_level:
-                    print("Invalid level range. Levels range from 1 to 90.")
-                tank_level.append(user_selected_tank_level)
-            except ValueError:
-                print("Enter valid numbers.")
-            not_selected_class = False
-            return user_selected_tank_class, tank_level
-        else:
-            print("Class not found. Try again.")
+    try:
+        while not_selected_class:
+            user_selected_tank_class = input("Type the exact tank class (Ignore capitalization): ").title()
 
+            if user_selected_tank_class in tank_classes:
+                while not_selected_tank_level:
+                    try:
+                        user_selected_tank_level = int(input(f"Enter {user_selected_tank_class} level: "))
+                        if user_selected_tank_level < minimum_level or user_selected_tank_level > maximum_level:
+                            print("Not a valid range. Levels go from 1 - 90.")
+                        else:
+                            tank_level.append(user_selected_tank_level)
+                            not_selected_tank_level = False
+                    except ValueError:
+                        print("That is not a number")
+            else:
+                print("Class not found. Try again.")
+            return user_selected_tank_class, tank_level
+    except ValueError:
+        print("Enter a valid number.")
+    # while not_selected_class:
+    #     user_selected_tank_class = input("Type the exact tank class (Ignore capitalization): ").title()
+    #     if user_selected_tank_class in tank_classes:
+    #         try:
+    #             user_selected_tank_level = int(input(f"Enter {user_selected_tank_class} level: "))
+    #             if user_selected_tank_level < minimum_level or user_selected_tank_level > maximum_level:
+    #                 print("Invalid level range. Levels range from 1 to 90.")
+    #             tank_level.append(user_selected_tank_level)
+    #         except ValueError:
+    #             print("Enter valid numbers.")
+    #         not_selected_class = False
+    #         return user_selected_tank_class, tank_level
+    #     else:
+    #         print("Class not found. Try again.")
 
 
 # select_character_healer_class has a list of playable healer classes. Returns class if user input matches name on list.
 def select_character_healer_class():
     healer_classes = ["White Mage", "Scholar", "Astrologian", "Sage"]
+    healer_level = []
 
     not_selected_class = True
-    while not_selected_class:
-        user_selected_healer_class = input("Type the exact healer class (Ignore capitalization): ").title()
-        if user_selected_healer_class in healer_classes:
-            not_selected_class = False
-            return user_selected_healer_class
-        else:
-            print("Class not found. Try again.")
+    not_selected_healer_level = True
+    minimum_level = 1
+    maximum_level = 90
+
+    try:
+        while not_selected_class:
+            user_selected_healer_class = input("Type the exact healer class (Ignore capitalization): ").title()
+            if user_selected_healer_class in healer_classes:
+                while not_selected_healer_level:
+                    try:
+                        user_selected_healer_level = int(input(f"Enter {user_selected_healer_class} level: "))
+                        if user_selected_healer_level < minimum_level or user_selected_healer_level > maximum_level:
+                            print("Not a valid range. Levels are from 1 - 90.")
+                        else:
+                            healer_level.append(user_selected_healer_level)
+                            not_selected_healer_level = False
+                    except ValueError:
+                        print("That is not a number.")
+            else:
+                print("Class not found. Try again.")
+            return user_selected_healer_class, healer_level
+    except ValueError:
+        print("Enter a valid number.")
 
 
 # select_character_dps_class has a list of playable dps class. Returns class if user input matches name on list.
 def select_character_dps_class():
     dps_classes = ["Dragoon", "Monk", "Ninja", "Samurai", "Reaper", "Bard", "Machinist", "Dancer", "Black Mage",
                    "Summoner", "Red Mage", "Blue Mage"]
+    dps_level = []
 
     not_selected_class = True
-    while not_selected_class:
-        user_selected_dps_class = input("Type the exact dps class (Ignore capitalization): ").title()
-        if user_selected_dps_class in dps_classes:
-            not_selected_class = False
-            return user_selected_dps_class
-        else:
-            print("Class not found. Try again.")
-
-
+    not_selected_dps_level = True
+    minimum_level = 1
+    maximum_level = 90
+    try:
+        while not_selected_class:
+            user_selected_dps_class = input("Type the exact dps class (Ignore capitalization): ").title()
+            if user_selected_dps_class in dps_classes:
+                while not_selected_dps_level:
+                    try:
+                        user_selected_dps_level = int(input(f"Enter {user_selected_dps_class} level: "))
+                        if user_selected_dps_level < minimum_level or user_selected_dps_level > maximum_level:
+                            print(f"Invalid range. Levels are from {minimum_level} - {maximum_level}.")
+                        else:
+                            dps_level.append(user_selected_dps_level)
+                            not_selected_dps_level = False
+                    except ValueError:
+                        print("That is not a number.")
+            else:
+                print("Class not found. Try again.")
+            return user_selected_dps_class, dps_level
+    except ValueError:
+        print("Enter a valid number.")
 
 
 # print(select_character_role())

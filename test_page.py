@@ -14,11 +14,15 @@ def select_character_tank_class():
 
             if user_selected_tank_class in tank_classes:
                 while not_selected_tank_level:
-                    user_selected_tank_level = int(input(f"Enter {user_selected_tank_class} level: "))
-                    if user_selected_tank_level < minimum_level or user_selected_tank_level > maximum_level:
-                        print("Not a valid range.")
-                    tank_level.append(user_selected_tank_level)
-                    not_selected_tank_level = False
+                    try:
+                        user_selected_tank_level = int(input(f"Enter {user_selected_tank_class} level: "))
+                        if user_selected_tank_level < minimum_level or user_selected_tank_level > maximum_level:
+                            print("Not a valid range. Levels are from 1 - 90.")
+                        else:
+                            tank_level.append(user_selected_tank_level)
+                            not_selected_tank_level = False
+                    except ValueError:
+                        print("That is not a number")
             else:
                 print("Class not found. Try again.")
             return user_selected_tank_class, tank_level

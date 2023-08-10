@@ -10,7 +10,7 @@ Scholar
 Summoner
 Bard
 Gunbreaker
-Name: Sophie
+hName: Sophie
 Gender: Female
 Race: Midlander
 Name: Sophie
@@ -78,3 +78,36 @@ Name: Sophie
 Gender: Female
 Race: Midlander
 ('Paladin', [])
+Name: Sophie
+Gender: Female
+Race: Midlander
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Df', [])
+('Healer', [])
+('Paladin', [90])
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Jgjh', [])
+('Paladin', [90])
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Paladin', [50])
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Dont Print This', [])
+('Gunbreaker', [80])
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Ds', [])
+('Sage', [10])
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Sdf', [])
+('Red Mage', [90])
