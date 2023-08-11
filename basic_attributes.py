@@ -16,21 +16,6 @@ class Avatar:
         return (f"Name: {self.name}\n"
                 f"Gender: {self.gender}\n"
                 f"Race: {self.race}\n")
-        # info_dictionary = {"Name": self.name,
-        #                    "Gender": self.gender,
-        #                    "Race": self.race,
-        #                    "Role": self.role,
-        #                    "Class": self.character_class
-        #                    }
-        # return info_dictionary
-
-
-    # def __str__(self):
-    #     return (f"Name: {self.name}\n"
-    #             f"Gender: {self.gender}\n"
-    #             f"Race: {self.race}\n"
-    #             f"Role: {self.role}\n"
-    #             f"Class: {self.character_class}")
 
 
 # Weapon class creates a weapon that accepts a weapon name, weapon class and item level
@@ -53,12 +38,6 @@ class MagicalWeapon(Weapon):
                 f"Equip class: {self.weapon_class}\n"
                 f"Item level: {self.weapon_item_level}\n"
                 f"Magic damage: {self.magical_damage}\n")
-
-    # def __str__(self):
-    #     return (f"Weapon name: {self.weapon_name}\n"
-    #             f"Weapon class: {self.weapon_class}\n"
-    #             f"Item level: {self.weapon_item_level}\n"
-    #             f"Magic Damage: {self.magical_damage}\n")
 
 
 # PhysicalWeapon is like MagicalWeapon that only the type of damage differs and will be labeled as physical damage
@@ -136,20 +115,6 @@ def select_character_tank_class():
             return user_selected_tank_class, tank_level
     except ValueError:
         print("Enter a valid number.")
-    # while not_selected_class:
-    #     user_selected_tank_class = input("Type the exact tank class (Ignore capitalization): ").title()
-    #     if user_selected_tank_class in tank_classes:
-    #         try:
-    #             user_selected_tank_level = int(input(f"Enter {user_selected_tank_class} level: "))
-    #             if user_selected_tank_level < minimum_level or user_selected_tank_level > maximum_level:
-    #                 print("Invalid level range. Levels range from 1 to 90.")
-    #             tank_level.append(user_selected_tank_level)
-    #         except ValueError:
-    #             print("Enter valid numbers.")
-    #         not_selected_class = False
-    #         return user_selected_tank_class, tank_level
-    #     else:
-    #         print("Class not found. Try again.")
 
 
 # select_character_healer_class has a list of playable healer classes. Returns class if user input matches name on list.
@@ -216,10 +181,6 @@ def select_character_dps_class():
         print("Enter a valid number.")
 
 
-# print(select_character_role())
-# print(select_character_tank_class())
-# print(select_character_healer_class())
-# print(select_character_dps_class())
 # add_to_page(sophie.get_basic_info(), white_mage_weapon.get_magic_weapon_info())
 print(sophie.get_basic_info())
 
@@ -254,9 +215,6 @@ def add_to_page(character_info):
         my_character_info.write(character_info)
         for job in form_a_list_of_jobs():
             my_character_info.write(f"{job}\n")
-
-        # my_character_info.write(weapon_info)
-# print(form_a_list_of_jobs())
 
 
 add_to_page(sophie.get_basic_info())

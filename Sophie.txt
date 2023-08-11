@@ -151,3 +151,8 @@ Invalid entry
 ('Astrologian', [90])
 ('Red Mage', [90])
 ('Reaper', [90])
+Name: Sophie
+Gender: Female
+Race: Midlander
+Invalid entry
+('Paladin', [1])
