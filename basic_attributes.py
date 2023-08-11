@@ -132,6 +132,7 @@ def select_character_tank_class():
                         print("That is not a number")
             else:
                 print("Class not found. Try again.")
+                return "Invalid entry"
             return user_selected_tank_class, tank_level
     except ValueError:
         print("Enter a valid number.")
@@ -177,6 +178,7 @@ def select_character_healer_class():
                         print("That is not a number.")
             else:
                 print("Class not found. Try again.")
+                return 'Invalid entry'
             return user_selected_healer_class, healer_level
     except ValueError:
         print("Enter a valid number.")
@@ -208,6 +210,7 @@ def select_character_dps_class():
                         print("That is not a number.")
             else:
                 print("Class not found. Try again.")
+                return "Invalid entry"
             return user_selected_dps_class, dps_level
     except ValueError:
         print("Enter a valid number.")

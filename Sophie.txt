@@ -111,3 +111,43 @@ Gender: Female
 Race: Midlander
 ('Sdf', [])
 ('Red Mage', [90])
+Name: Sophie
+Gender: Female
+Race: Midlander
+Try again
+('Paladin', [90])
+Name: Sophie
+Gender: Female
+Race: Midlander
+None
+None
+('Paladin', [90])
+Name: Sophie
+Gender: Female
+Race: Midlander
+Invalid entry.
+('Dark Knight', [45])
+Name: Sophie
+Gender: Female
+Race: Midlander
+Invalid entry
+('Warrior', [50])
+Name: Sophie
+Gender: Female
+Race: Midlander
+Invalid entry
+('Black Mage', [3])
+Name: Sophie
+Gender: Female
+Race: Midlander
+Invalid entry
+('Dancer', [65])
+('Dark Knight', [90])
+('Warrior', [90])
+('Gunbreaker', [90])
+('White Mage', [90])
+('Scholar', [90])
+('Sage', [90])
+('Astrologian', [90])
+('Red Mage', [90])
+('Reaper', [90])

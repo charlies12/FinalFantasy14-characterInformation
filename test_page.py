@@ -24,7 +24,9 @@ def select_character_tank_class():
                     except ValueError:
                         print("That is not a number")
             else:
+
                 print("Class not found. Try again.")
+                return user_selected_tank_class, tank_level
             return user_selected_tank_class, tank_level
     except ValueError:
         print("Enter a valid number.")
