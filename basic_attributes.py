@@ -112,7 +112,7 @@ def select_character_tank_class():
             else:
                 print("Class not found. Try again.")
                 return "Invalid entry"
-            return user_selected_tank_class, tank_level
+            return user_selected_tank_class, tank_level[0]
     except ValueError:
         print("Enter a valid number.")
 
@@ -144,7 +144,7 @@ def select_character_healer_class():
             else:
                 print("Class not found. Try again.")
                 return 'Invalid entry'
-            return user_selected_healer_class, healer_level
+            return user_selected_healer_class, healer_level[0]
     except ValueError:
         print("Enter a valid number.")
 
@@ -176,17 +176,13 @@ def select_character_dps_class():
             else:
                 print("Class not found. Try again.")
                 return "Invalid entry"
-            return user_selected_dps_class, dps_level
+            return user_selected_dps_class, dps_level[0]
     except ValueError:
         print("Enter a valid number.")
 
 
 # add_to_page(sophie.get_basic_info(), white_mage_weapon.get_magic_weapon_info())
 print(sophie.get_basic_info())
-
-# print(white_mage_weapon)
-# print(knee_height)
-# print(dark_knight_weapon)
 
 
 # returns a list of jobs unlocked by character
@@ -213,8 +209,11 @@ def form_a_list_of_jobs():
 def add_to_page(character_info):
     with open(f"{sophie.get_name()}.txt", "a+") as my_character_info:
         my_character_info.write(character_info)
-        for job in form_a_list_of_jobs():
-            my_character_info.write(f"{job}\n")
+        my_character_info.write(f"Class and Level.\n")
+        class_and_levels_dict = dict((class_name, class_level) for class_name, class_level in form_a_list_of_jobs())
+        my_character_info.write(str(class_and_levels_dict) + "\n")
+        # for job in form_a_list_of_jobs():
+        #     my_character_info.write(f"{job}\n")
 
 
 add_to_page(sophie.get_basic_info())

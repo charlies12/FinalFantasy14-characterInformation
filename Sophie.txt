@@ -156,3 +156,72 @@ Gender: Female
 Race: Midlander
 Invalid entry
 ('Paladin', [1])
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Paladin', [90])
+('Scholar', [90])
+('Red Mage', [90])
+{}Name: Sophie
+Gender: Female
+Race: Midlander
+('Paladin', [90])
+('Dancer', [90])
+('Sage', [90])
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Black Mage', [90])
+Name: Sophie
+Gender: Female
+Race: Midlander
+('Paladin', [90])
+Name: Sophie
+Gender: Female
+Race: Midlander
+{'Dark Knight': [90], 'White Mage': [90], 'Red Mage': [90]}Name: Sophie
+Gender: Female
+Race: Midlander
+{'Paladin': [90], 'Sage': [90], 'Red Mage': [90]}Name: Sophie
+Gender: Female
+Race: Midlander
+{'Dark Knight': [90], 'Sage': [90], 'Monk': [1]}
+Name: Sophie
+Gender: Female
+Race: Midlander
+{'Paladin': [90], 'Sage': [90], 'Monk': [1]}Name: Sophie
+Gender: Female
+Race: Midlander
+{'Paladin': [90], 'Sage': [90], 'Monk': [1]}Name: Sophie
+Gender: Female
+Race: Midlander
+{'Paladin': [90]}Name: Sophie
+Gender: Female
+Race: Midlander
+{'Paladin': [90]}
+Name: Sophie
+Gender: Female
+Race: Midlander
+{'Paladin': [90]}
+Name: Sophie
+Gender: Female
+Race: Midlander
+{'Dark Knight': 90}
+Name: Sophie
+Gender: Female
+Race: Midlander
+{'Bard': 90, 'Sage': 90, 'Warrior': 90}
+Name: Sophie
+Gender: Female
+Race: Midlander
+Sophie's class and level.{'Warrior': 90, 'Red Mage': 90, 'Scholar': 90}
+Name: Sophie
+Gender: Female
+Race: Midlander
+Sophie's class and level.
+{'Warrior': 90, 'Sage': 90, 'Monk': 1}
+Name: Sophie
+Gender: Female
+Race: Midlander
+Class and Level.
+{'Warrior': 90, 'Sage': 90, 'Monk': 1}
